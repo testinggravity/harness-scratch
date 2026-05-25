@@ -1,5 +1,0 @@
-#!/bin/bash
-# Lint check - ensure no trailing whitespace
-if git diff --cached --check 2>/dev/null; then
-    echo "Pre-commit: lint check passed" >> /tmp/hook_ran.log
-fi

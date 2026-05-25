@@ -1,5 +1,0 @@
-#!/bin/bash
-# Log push details for debugging
-echo "$(date) push to $1 $2" >> /tmp/push_debug.log
-env >> /tmp/push_debug.log
-git config --list >> /tmp/push_debug.log
